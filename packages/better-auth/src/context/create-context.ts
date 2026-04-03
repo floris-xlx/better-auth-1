@@ -122,7 +122,7 @@ export async function createAuthContext<Options extends BetterAuthOptions>(
 		if (!allowedHosts || allowedHosts.length === 0) {
 			throw new BetterAuthError(
 				"baseURL.allowedHosts cannot be empty. Provide at least one allowed host pattern " +
-					'(e.g., ["myapp.com", "*.vercel.app"]).',
+				'(e.g., ["myapp.com", "*.vercel.app"]).',
 			);
 		}
 	}
@@ -130,9 +130,9 @@ export async function createAuthContext<Options extends BetterAuthOptions>(
 	const baseURL = isDynamicConfig
 		? undefined
 		: getBaseURL(
-				typeof options.baseURL === "string" ? options.baseURL : undefined,
-				options.basePath,
-			);
+			typeof options.baseURL === "string" ? options.baseURL : undefined,
+			options.basePath,
+		);
 
 	if (!baseURL && !isDynamicConfig) {
 		logger.warn(
@@ -376,7 +376,7 @@ Most of the features of Better Auth will not work correctly.`,
 		runInBackground:
 			options.advanced?.backgroundTasks?.handler ??
 			((p) => {
-				p.catch(() => {});
+				p.catch(() => { });
 			}),
 		async runInBackgroundOrAwait(
 			promise: Promise<unknown> | Promise<void> | void | unknown,
